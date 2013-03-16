@@ -1,0 +1,18 @@
+<fieldset>
+  <%%= f.hidden_field :type, :value => 'FieldableForm::DropDown' %>
+
+  <%%= f.label :name %>
+  <%%= f.text_field :name %>
+
+  <%%= f.label :required %>
+  <%%= f.check_box :required %>
+
+  <%%= f.label :include_blank %>
+  <%%= f.check_box :include_blank %>
+
+  <%%= f.label :items %>
+  <%%= f.text_area :items %>
+
+  <%%= f.hidden_field :_destroy %>
+  <%%= link_to '[remove]', '#', data: { <%= uname %>: 'remove_field' } %>
+</fieldset>

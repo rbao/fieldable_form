@@ -1,0 +1,21 @@
+<fieldset>
+  <%%= f.hidden_field :type, :value => 'FieldableForm::TextField' %>
+
+  <%%= f.label :name %>
+  <%%= f.text_field :name %>
+
+  <%%= f.label :required %>
+  <%%= f.check_box :required %>
+
+  <%%= f.label :number_only %>
+  <%%= f.check_box :number_only %>
+
+  <%%= f.label :min_length %>
+  <%%= f.text_field :min_length %>
+
+  <%%= f.label :max_length %>
+  <%%= f.text_field :max_length %>
+
+  <%%= f.hidden_field :_destroy %>
+  <%%= link_to '[remove]', '#', data: { <%= uname %>: 'remove_field' } %>
+</fieldset>
