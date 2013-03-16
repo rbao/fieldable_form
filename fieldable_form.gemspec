@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = FieldableForm::VERSION
   s.authors     = ["Roy Y. Bao"]
   s.email       = ["roybao2010@gmail.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/rbao/fieldable_form"
   s.summary     = "FieldableForm allows you easily build a end user facing form builder."
-  s.description = "FieldableForm"
+  s.description = "FieldableForm allows you easily build a end user facing form builder."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
