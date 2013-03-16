@@ -10,7 +10,7 @@ FieldableForm is only compatiable with Rails 3+.
 
 Getting Started
 ----------
-The best way get started with FieldableForm is by looking into the [Sample App](# "Sample App").
+The best way get started with FieldableForm is by looking into the [Example App](https://github.com/rbao/fieldable_form_example_app "Example App").
 
 ### Form Model
 The core functionality of FieldableForm is provided by the base form model `FieldableForm::BaseForm`. It is recommanded that you do not use this model directly, instead you should build your own form model by inheriting from this class.
@@ -48,4 +48,6 @@ The FieldableForm gem itself only contains models and does not provide any views
 
     rails g fieldable_form:boostrap [underscored_form_model_name]
 
-
+Reference
+----------
+[Example App](https://github.com/rbao/fieldable_form_example_app "Example App").
