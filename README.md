@@ -1,4 +1,4 @@
-FieldableForm [![Build Status](https://travis-ci.org/rbao/fieldable_form.png)](https://travis-ci.org/rbao/fieldable_form)
+FieldableForm [![Build Status](https://travis-ci.org/rbao/fieldable_form.png)](https://travis-ci.org/rbao/fieldable_form) [![Code Climate](https://codeclimate.com/github/rbao/fieldable_form.png)](https://codeclimate.com/github/rbao/fieldable_form)
 ==============
 FieldableForm is intended to make building an end user facing form builder easier. It provides all the base models necessary for building such functionality and also some erb and js templates for bootstraping the views.
 
