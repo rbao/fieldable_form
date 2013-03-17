@@ -46,7 +46,7 @@ Bootstrap Views
 ----------------
 The FieldableForm gem itself only contains models and does not provide any views by default, since views will be much different for different applications. However you could get a default views and some useful helpers as a starting point.
 
-    rails g fieldable_form:boostrap [underscored_form_model_name]
+    rails g fieldable_form:bootstrap [underscored_form_model_name]
 
 Reference
 ----------
