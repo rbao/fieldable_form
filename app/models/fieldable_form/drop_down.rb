@@ -2,7 +2,6 @@ module FieldableForm
   class DropDown < AbstractField
     
     attr_accessible :required, :include_blank, :items
-    attr_accessor :required, :include_blank, :items
     
     # Overrides
     def render_method

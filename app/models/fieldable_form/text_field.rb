@@ -2,7 +2,6 @@ module FieldableForm
   class TextField < AbstractField
 
     attr_accessible :required, :number_only, :min_length, :max_length
-    attr_accessor :required, :number_only, :min_length, :max_length
 
     validates :min_length, :allow_blank => true, :numericality => { :only_integer => true }, :length => { :maximum => 255 }
     validates :max_length, :allow_blank => true, :numericality => { :only_integer => true }, :length => { :maximum => 255 }
