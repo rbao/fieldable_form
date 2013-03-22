@@ -17,7 +17,7 @@ module FieldableForm
     validate_fieldable_form :form, :values
   end
 
-  describe Validations do
+  describe EntryValidations do
     let(:model) { MockModel.new(form, values) }
 
     context 'when the form contains required field' do
