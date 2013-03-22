@@ -1,8 +1,5 @@
 Description:
-    Explain the generator
+  Generate some useful helps and views as a starting point
 
 Example:
-    rails generate bootstrap product_form
-
-    This will create:
-        what/will/it/create
+    rails generate fieldabe_form:bootstrap product_form
