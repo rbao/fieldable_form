@@ -1,5 +1,3 @@
-require "jquery-rails"
-
 require "fieldable_form/engine"
 
 module FieldableForm

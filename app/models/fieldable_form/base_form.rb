@@ -6,7 +6,7 @@ module FieldableForm
 
     attr_accessible :fields_attributes
 
-    has_many :fields, :class_name => AbstractField, :as => :fieldable, :dependent => :destroy
+    has_many :fields, :class_name => Field, :as => :fieldable, :dependent => :destroy
     accepts_nested_attributes_for :fields, :allow_destroy => true
   end
 end

@@ -1,5 +1,5 @@
 module FieldableForm
-  class DropDown < AbstractField
+  class DropDown < Field
     
     attr_accessible :required, :include_blank, :items
     

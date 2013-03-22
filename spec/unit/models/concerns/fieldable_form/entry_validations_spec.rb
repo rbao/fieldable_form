@@ -4,7 +4,7 @@ module FieldableForm
   
   class MockModel
     include ActiveModel::Validations
-    include FieldableForm::Validations
+    include FieldableForm::EntryValidations
 
     attr_accessor :form, :values
 

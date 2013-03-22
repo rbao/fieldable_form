@@ -1,5 +1,5 @@
 module FieldableForm
-  class TextField < AbstractField
+  class TextField < Field
 
     attr_accessible :required, :number_only, :min_length, :max_length
 

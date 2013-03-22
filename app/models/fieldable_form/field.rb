@@ -1,9 +1,7 @@
 module FieldableForm
-  class AbstractField < ActiveRecord::Base
+  class Field < ActiveRecord::Base
 
     DESCENDANTS = %w(FieldableForm::TextField FieldableForm::DropDown FieldableForm::CheckBox)
-
-    self.table_name = :fieldable_form_fields
 
     attr_accessible :name, :options, :type
 
@@ -17,15 +15,15 @@ module FieldableForm
     # Create the appropriate children instance according to the type.
     def self.new(*args, &block)
       # Children should use the original method
-      return super(*args, &block) if self != ::FieldableForm::AbstractField
+      return super(*args, &block) if self != ::FieldableForm::Field
       
       attributes = args.first
-      raise CannotInitializeAbstractClass.new('FieldableForm::AbstractField is an abstract class') unless attributes.is_a?(Hash)
+      raise CannotInitializeAbstractClass.new('FieldableForm::Field is an abstract class') unless attributes.is_a?(Hash)
 
       type = attributes[:type] || attributes['type']
       return type.constantize.new(*args, &block) if DESCENDANTS.include?(type)
       
-      raise CannotInitializeAbstractClass.new('FieldableForm::AbstractField is an abstract class')
+      raise CannotInitializeAbstractClass.new('FieldableForm::Field is an abstract class')
     end
 
     def render_method

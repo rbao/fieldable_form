@@ -8,7 +8,7 @@ FactoryGirl.define do
   factory :base_form, :class => FieldableForm::BaseForm do
   end
 
-  factory :abstract_field, :class => FieldableForm::AbstractField do
+  factory :field, :class => FieldableForm::Field do
     sequence(:name) { |n| "abstract_field_#{n}" }
 
     trait :with_form do

@@ -1,5 +1,5 @@
 module FieldableForm
-  class CheckBox < AbstractField
+  class CheckBox < Field
     
     # Overrides
     def render_method
