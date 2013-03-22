@@ -10,7 +10,6 @@ FieldableForm is only compatiable with Rails 3+.
 
 Getting Started
 ----------
-The best way get started with FieldableForm is by looking into the [Example App](https://github.com/rbao/fieldable_form_example_app "Example App").
 To use FieldableForm, you will need to implement the following two types of models.
 
 ### Form Model
