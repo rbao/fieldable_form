@@ -1,5 +1,5 @@
 module FieldableForm
-  module Validations
+  module EntryValidations
     extend ActiveSupport::Concern
 
     module ClassMethods
