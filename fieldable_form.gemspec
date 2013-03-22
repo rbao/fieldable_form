@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "FieldableForm allows you to easily build an end user facing form builder."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2.9"
 
