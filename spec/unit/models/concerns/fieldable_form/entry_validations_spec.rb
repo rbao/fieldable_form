@@ -14,7 +14,7 @@ module FieldableForm
       @errors = ActiveModel::Errors.new(self)
     end
 
-    validate_fieldable_form :form, :values
+    validate_fieldable_form_entry :form, :values
   end
 
   describe EntryValidations do
