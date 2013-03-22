@@ -1,6 +1,6 @@
 FieldableForm [![Build Status](https://travis-ci.org/rbao/fieldable_form.png)](https://travis-ci.org/rbao/fieldable_form) [![Code Climate](https://codeclimate.com/github/rbao/fieldable_form.png)](https://codeclimate.com/github/rbao/fieldable_form)
 ==============
-FieldableForm is intended to make building an end user facing form builder easier. It provides all the base models necessary for building such functionality and also some erb and js templates for bootstraping the views.
+FieldableForm is intended to make building an end user facing form builder easier. It provides all the field models necessary for building such functionality and also some erb and js templates for bootstraping the views.
 
 Installation
 -------------
@@ -11,25 +11,30 @@ FieldableForm is only compatiable with Rails 3+.
 Getting Started
 ----------
 The best way get started with FieldableForm is by looking into the [Example App](https://github.com/rbao/fieldable_form_example_app "Example App").
+To use FieldableForm, you will need to implement the following two types of models.
 
 ### Form Model
-The core functionality of FieldableForm is provided by the base form model `FieldableForm::BaseForm`. It is recommanded that you do not use this model directly, instead you should build your own form model by inheriting from this class.
+FieldableForm provide an easy way for you to build form models that can have different type of fields.
     
-    class ProductForm < FieldableForm::BaseForm
+    class ProductForm < ActiveRecord::Base
+      attr_accessible :fields_attributes
+    
+      has_many :fields, :class_name => FieldableForm::Field, :as => :fieldable, :dependent => :destroy
+      accepts_nested_attributes_for :fields, :allow_destroy => true
     end
 
-The form model is basically a container that holds all the fields of a form. You can deal with the individual fields by simply calling `#fields` which is just a `has_many` association defined in `FieldableForm::BaseForm`.
+The `FieldableForm::Field` provided by FieldableForm is the parent of all other fields, by having a has_many association with it, the form model can have any types of fields and it handles all the STI headaches. You can also implement your own field by inheriting from `FieldableForm::Field` as long as you implement the mandatory methods, you can check the source of `FieldableForm::Field` for those methods.
 
 ### Entry Model
-The entry model is the model that will hold the values of the fields that user entered through the form. This model is not provided by FieldableForm and you should build it by yourself. However, it needs to have an attribute which can holds the field name and value pairs as an hash.
+The entry model is the model that will hold the values of the fields that user entered through the form. It needs to have an attribute which can holds the field name and value pairs as an hash.
 
     class Product < ActiveRecord::Base
       attr_accessible :product_form_id, :properties
       belongs_to :product_form
       
-      # provides validations for the form field
-      include FieldableForm::Validations
-      validate_fieldable_form :product_form, :properties
+      # provides validations for the the entry against the form model
+      include FieldableForm::EntryValidations
+      validate_fieldable_form_entry :product_form, :properties
       
       serialize :properties, Hash
     end
@@ -44,10 +49,10 @@ Then in the views you can use `OpenStruct` to render the fields from the `produc
 
 Bootstrap Views
 ----------------
-The FieldableForm gem itself only contains models and does not provide any views by default, since views will be much different for different applications. However you could get a default views and some useful helpers as a starting point.
+FieldableForm does not provide any views by default, However you could get a default views and some useful helpers as a starting point.
 
     rails g fieldable_form:bootstrap [underscored_form_model_name]
 
-Reference
+Example App
 ----------
-[Example App](https://github.com/rbao/fieldable_form_example_app "Example App").
+[Example App](https://github.com/rbao/fieldable_form_example_app "Example App")
