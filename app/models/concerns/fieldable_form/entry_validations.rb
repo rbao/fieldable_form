@@ -3,7 +3,7 @@ module FieldableForm
     extend ActiveSupport::Concern
 
     module ClassMethods
-      def validate_fieldable_form(form, values)
+      def validate_fieldable_form_entry(form, values)
         cattr_accessor :fieldable_form_getter_method, :fieldable_form_values_getter_method
         self.fieldable_form_getter_method = form.to_sym
         self.fieldable_form_values_getter_method = values.to_sym
