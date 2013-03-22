@@ -2,10 +2,6 @@ class FieldableForm::BootstrapGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
   argument :form_name, :type => :string
 
-  def generate_models
-    template 'form.rb', "app/models/#{uname}.rb"
-  end
-
   def generate_assets
     template 'fieldable_form.js.coffee', "app/assets/javascripts/#{uname}.js.coffee"
   end
