@@ -10,7 +10,7 @@ module FieldableForm
 
     # Overrides
     def render_options
-      items_array = items.squish.delete(' ').split(',')
+      items_array = items.split(',').map(&:strip)
       if include_blank == '1'
         items_array.map! { |i| [i, i] }
         items_array.first[1] = nil
