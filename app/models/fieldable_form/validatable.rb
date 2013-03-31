@@ -7,6 +7,10 @@ module FieldableForm
       @errors = ActiveModel::Errors.new(self)
       super(*args)
     end
+
+    def self.i18n_scope
+      :activerecord
+    end
   
   end 
 end
