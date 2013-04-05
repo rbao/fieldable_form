@@ -1,6 +1,6 @@
 class FieldableForm::BootstrapGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
-  argument :form_name, :type => :string
+  argument :form_model, :type => :string
 
   def generate_assets
     template 'fieldable_form.js.coffee', "app/assets/javascripts/#{uname}.js.coffee"
@@ -24,7 +24,7 @@ class FieldableForm::BootstrapGenerator < Rails::Generators::Base
     end
 
     def uname
-      form_name.underscore
+      form_model.underscore
     end
 
     def dname
@@ -32,6 +32,6 @@ class FieldableForm::BootstrapGenerator < Rails::Generators::Base
     end
 
     def cname
-      form_name.camelize
+      form_model.camelize
     end
 end

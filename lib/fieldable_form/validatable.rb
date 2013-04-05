@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module FieldableForm
   class Validatable < OpenStruct
     include ActiveModel::Validations

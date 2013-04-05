@@ -5,9 +5,6 @@ def random_options
 end
 
 FactoryGirl.define do
-  factory :base_form, :class => FieldableForm::BaseForm do
-  end
-
   factory :field, :class => FieldableForm::Field do
     sequence(:name) { |n| "abstract_field_#{n}" }
 

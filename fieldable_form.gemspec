@@ -11,14 +11,16 @@ Gem::Specification.new do |s|
   s.summary     = "FieldableForm allows you to easily build an end user facing form builder."
   s.description = "FieldableForm allows you to easily build an end user facing form builder."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.9"
+  s.add_dependency "railties"
+  s.add_dependency "activerecord"
 
-  s.add_development_dependency "mysql2", "~> 0.3.11"
-  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "sqlite3"
+
+  s.add_development_dependency 'rspec'
   s.add_development_dependency "faker"
-  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "factory_girl"
   s.add_development_dependency "simplecov"
 end
