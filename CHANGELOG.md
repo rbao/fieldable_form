@@ -17,3 +17,5 @@ v0.0.3 - In Development
 ---
 * Bug Fix: Fix spaces inside drop down items does not get displayed.
 * Bug Fix: Fix when validating entry using `FieldableForm::EntryValidations` the error message does not use translation. Now it uses activerecord translation, ex. `activerecord.errors.messages.blank`.
+* Refactor: Move all files to lib directory
+* DEPENDENCY CHANGE: Remove `rails`, use `activerecord` and `railties`
