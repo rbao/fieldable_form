@@ -1,8 +1,6 @@
 module FieldableForm
   class DropDown < Field
     
-    attr_accessible :required, :include_blank, :items
-    
     # Overrides
     def render_method
       :select

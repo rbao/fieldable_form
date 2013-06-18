@@ -3,8 +3,6 @@ module FieldableForm
 
     DESCENDANTS = %w(FieldableForm::TextField FieldableForm::DropDown FieldableForm::CheckBox)
 
-    attr_accessible :name, :options, :type
-
     belongs_to :fieldable, :polymorphic => true, :touch => true
 
     validates :name, :presence => true, :length => { :maximum => 255 }
